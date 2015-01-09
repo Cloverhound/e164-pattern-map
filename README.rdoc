@@ -30,3 +30,30 @@ To see the actual generated config file for IOS go to /sites/<id>/numbers_ios
 When you use the e164-pattern-map command it loads the config file ONCE, and it does not update automatically.  To update the list you MUST execute the following command in IOS exec mode.
 
 router# voice class e164-pattern-map load <tag 1-10000>
+
+==VERIFICATION
+
+ CUBE#show voice class e164-pattern-map 100
+
+ e164-pattern-map 100
+ -----------------------------------------
+  Description: 
+  It has 3 entries
+  It is populated from url http://192.168.1.34:3000/sites/1/numbers_ios.
+  Map is valid.
+
+ E164 pattern 
+ -------------------
+ 1234
+ 3233
+ 5678
+
+
+ CUBE#sh dial-peer voice 100
+ VoiceOverIpPeer100
+	peer type = voice, system default peer = FALSE, information type = voice,
+	description = `',
+	tag = 100, destination-pattern = `',
+	destination e164-pattern-map tag = 100 status = valid,
+	voice reg type = 0, corresponding tag = 0,
+	allow watch = FALSE
