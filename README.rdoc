@@ -4,17 +4,16 @@ This is a test application in order to help easily build and manage web based li
 
 ==IOS GATEWAY CONFIG EXAMPLE
 
-voice class e164-pattern-map 100
- description 
- url http://server_ip/sites/1/numbers_ios
-!
-dial-peer voice 100 voip
- session protocol sipv2
- session target ipv4:192.168.1.6
- destination e164-pattern-map 100
- codec g711ulaw
- no vad
-!
+ voice class e164-pattern-map 100
+  description 
+  url http://server_ip/sites/1/numbers_ios
+ dial-peer voice 100 voip
+  session protocol sipv2
+  session target ipv4:192.168.1.6
+  destination e164-pattern-map 100
+  codec g711ulaw
+  no vad
+
 
 ==HOW TO USE / UPDATE
 
