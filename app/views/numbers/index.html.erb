@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Numbers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tfn</th>
+      <th>Site</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Dnis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @numbers.each do |number| %>
+      <tr>
+        <td><%= number.tfn %></td>
+        <td><%= number.site_id %></td>
+        <td><%= number.description %></td>
+        <td><%= number.active %></td>
+        <td><%= number.dnis %></td>
+        <td><%= link_to 'Show', number %></td>
+        <td><%= link_to 'Edit', edit_number_path(number) %></td>
+        <td><%= link_to 'Destroy', number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Number', new_number_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tfn:</strong>
+  <%= @number.tfn %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @number.site_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @number.description %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @number.active %>
+</p>
+
+<p>
+  <strong>Dnis:</strong>
+  <%= @number.dnis %>
+</p>
+
+<%= link_to 'Edit', edit_number_path(@number) %> |
+<%= link_to 'Back', numbers_path %>
