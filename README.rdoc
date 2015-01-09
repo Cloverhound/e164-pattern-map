@@ -17,13 +17,13 @@ This is a test application in order to help easily build and manage web based li
 
 ==HOW TO USE / UPDATE
 
-To create a new site or list go to ‘http://server_ip/sites'
+To create a new site or list go to /sites
 
-To create the corresponding list of numbers go to ‘http://server_ip/numbers'
+To create the corresponding list of numbers go to /numbers
 
-To create see a HTML list of numbers in a list go to ‘http://server_ip/sites/<id>/numbers'
+To create see a HTML list of numbers in a list go to /sites/<id>/numbers
 
-To see the actual generated config file for IOS go to ‘http://server_ip/sites/<id>/numbers_ios'
+To see the actual generated config file for IOS go to /sites/<id>/numbers_ios
 
 ==HOW TO UPDATE LIST IN GW
 
