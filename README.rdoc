@@ -1,28 +1,33 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a test application in order to help easily build and manage web based list for using with the new Cisco e164-pattern-maps added in IOS 15.3 for outbound calls and 15.4T for inbound calls.
 
-Things you may want to cover:
+==IOS GATEWAY CONFIG EXAMPLE
 
-* Ruby version
+voice class e164-pattern-map 100
+ description 
+ url http://server_ip/sites/1/numbers_ios
+!
+dial-peer voice 100 voip
+ session protocol sipv2
+ session target ipv4:192.168.1.6
+ destination e164-pattern-map 100
+ codec g711ulaw
+ no vad
+!
 
-* System dependencies
+==HOW TO USE / UPDATE
 
-* Configuration
+To create a new site or list go to http://server_ip/sites
 
-* Database creation
+To create the corresponding list of numbers go to http://server_ip/numbers
 
-* Database initialization
+To create see a HTML list of numbers in a list go to http://server_ip/sites/<id>/numbers
 
-* How to run the test suite
+To see the actual generated config file for IOS go to http://server_ip/sites/<id>/numbers_ios
 
-* Services (job queues, cache servers, search engines, etc.)
+==HOW TO UPDATE LIST IN GW
 
-* Deployment instructions
+When you use the e164-pattern-map command it loads the config file ONCE, and it does not update automatically.  To update the list you MUST execute the following command in IOS exec mode.
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+router# voice class e164-pattern-map load <tag 1-10000>
