@@ -50,10 +50,10 @@ router# voice class e164-pattern-map load <tag 1-10000>
 
 
  CUBE#sh dial-peer voice 100
- VoiceOverIpPeer100
-	peer type = voice, system default peer = FALSE, information type = voice,
-	description = `',
-	tag = 100, destination-pattern = `',
-	destination e164-pattern-map tag = 100 status = valid,
-	voice reg type = 0, corresponding tag = 0,
-	allow watch = FALSE
+ VoiceOverIpPeer10
+  peer type = voice, system default peer = FALSE, information type = voice,
+  description = `',
+  tag = 100, destination-pattern = `',
+  destination e164-pattern-map tag = 100 status = valid,
+  voice reg type = 0, corresponding tag = 0,
+  allow watch = FALSE
